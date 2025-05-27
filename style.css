@@ -1,0 +1,8 @@
+:root{--primary:#4caf50;--dark:#222;--light:#fff;font-size:16px;}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:0;line-height:1.6;color:var(--dark);background:var(--light);}
+header{background:var(--primary);color:var(--light);padding:1rem;text-align:center}
+nav a{color:var(--light);margin:0 .5rem;text-decoration:none;font-weight:bold}
+section{padding:2rem 1rem}
+h2{text-align:center;color:var(--primary)}
+ul{list-style:disc;margin-left:1.5rem}
+footer{background:var(--dark);color:var(--light);text-align:center;padding:1rem 0}
