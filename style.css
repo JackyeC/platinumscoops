@@ -20,12 +20,14 @@ nav a:hover{color:var(--primary);}
 .btn-primary{background:var(--primary);color:var(--light);}
 .btn-primary:hover{opacity:.9;}
 
-.hero{position:relative;height:65vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--light);}
-.hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1583511655826-1b8d011d4f0b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;z-index:-2;}
-.hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.55);z-index:-1;}
+
+.hero{position:relative;height:65vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--light);overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:url('hero.jpg') center/cover no-repeat;z-index:-2;}
+.overlay{background:rgba(0,0,0,.55);padding:60px 20px;border-radius:8px;z-index:1;}
+.fade-in{animation:fadeInUp .8s ease-out both;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .hero h1{font-size:3rem;margin-bottom:.5rem;}
 .hero p{font-size:1.25rem;margin-bottom:1.5rem;}
-
 .section{padding:4rem 1rem;}
 .section:nth-of-type(even){background:var(--gray);}
 .container{max-width:1100px;margin:0 auto;}
