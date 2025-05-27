@@ -3,30 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Platinum Scoops – Dog Poop Removal in Greater Waco, TX</title>
+  <title>Platinum Scoops – Luxury Dog Poop Removal in Waco, TX</title>
 
-  <!-- SEO meta -->
-  <meta name="description"
-        content="Platinum Scoops provides reliable, affordable dog poop removal in Woodway, Waco, Hewitt, and nearby Texas communities. Book your first cleanup today!" />
+  <!-- SEO -->
+  <meta name="description" content="Luxury dog poop removal serving Waco, Woodway, and Hewitt. Platinum Scoops offers insured, background‑checked techs and white‑glove service." />
+  <link rel="canonical" href="https://platinumscoops.netlify.app/" />
 
-  <!-- Link to your existing stylesheet -->
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Platinum Scoops – Luxury Dog Poop Removal" />
+  <meta property="og:description" content="White‑glove dog waste removal for discerning pet owners in Waco, TX." />
+  <meta property="og:url" content="https://platinumscoops.netlify.app/" />
+  <meta property="og:image" content="https://platinumscoops.netlify.app/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Hero Section -->
+  <!-- Luxury Hero -->
   <header class="hero">
-    <h1>Waco’s Platinum Poop‑Scooping Service</h1>
-    <p>Fast, affordable, and 100% satisfaction‑guaranteed dog waste removal for busy pet owners.</p>
-    <a href="#pricing" class="cta-btn">Get My Yard Cleaned</a>
+    <div class="hero-overlay">
+      <h1>Luxury Poop‑Scooping<br>for Greater Waco</h1>
+      <p>Insured. Background‑checked. Five‑star rated.</p>
+      <a href="#pricing" class="cta-btn">Get My Yard Cleaned</a>
+    </div>
   </header>
 
   <!-- Service Areas -->
   <section id="service-areas">
     <h2>Choose Your City</h2>
     <ul>
+      <li><a href="/poop-scooping-waco-tx.html">Waco, TX</a></li>
       <li><a href="/poop-scooping-woodway-tx.html">Woodway, TX</a></li>
-      <!-- Add more as you expand -->
-      <!-- <li><a href="/poop-scooping-waco-tx.html">Waco, TX</a></li> -->
       <!-- <li><a href="/poop-scooping-hewitt-tx.html">Hewitt, TX</a></li> -->
     </ul>
   </section>
@@ -42,17 +53,65 @@
     </ul>
   </section>
 
-  <!-- Pricing (sample) -->
+  <!-- Pricing -->
   <section id="pricing">
     <h2>Transparent Pricing</h2>
-    <p>Starting at <strong>$15/week</strong> for up to two dogs and average‑sized yards.</p>
+    <div class="pricing-grid">
+      <div class="card">
+        <h3>Standard</h3>
+        <p class="price">$15 / week</p>
+        <p>Up to 2 dogs<br>Average yard</p>
+      </div>
+      <div class="card popular">
+        <h3>Premium</h3>
+        <p class="price">$25 / week</p>
+        <p>3‑4 dogs<br>Large yard</p>
+      </div>
+      <div class="card">
+        <h3>One‑Time</h3>
+        <p class="price">$65</p>
+        <p>Deep clean + deodorizer</p>
+      </div>
+    </div>
     <a href="mailto:info@platinumscoops.com" class="cta-btn">Request a Quote</a>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>Client Love</h2>
+    <blockquote>
+      “Our yard has never looked (or smelled) better. Worth every penny!”
+      <cite>— Sarah T., Waco</cite>
+    </blockquote>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>&copy; <span id="year"></span> Platinum Scoops. All rights reserved.</p>
   </footer>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Platinum Scoops",
+    "url": "https://platinumscoops.netlify.app",
+    "image": "https://platinumscoops.netlify.app/og-image.jpg",
+    "telephone": "+1-254-726-6737",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Your Waco-based address",
+      "addressLocality": "Waco",
+      "addressRegion": "TX",
+      "postalCode": "76710",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Waco TX","Woodway TX","Hewitt TX"],
+    "priceRange": "$$",
+    "description": "Luxury dog poop removal and yard deodorizing."
+  }
+  </script>
 
   <script>
     // Update year automatically
