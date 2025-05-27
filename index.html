@@ -1,62 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>PlatinumScoops | Professional Pet Waste Removal Service</title>
-  <meta name="description" content="PlatinumScoops provides reliable dog‑poop scooping and pet‑waste removal for residential and commercial properties. Weekly, bi‑weekly, and one‑time cleanups.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<title>PlatinumScoops | Professional Pet Waste Removal Service</title>
+<meta name="description" content="PlatinumScoops removes pet waste so you can enjoy a clean, healthy yard. Weekly, bi-weekly, and one-off cleanups for homes, HOAs, and businesses.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>PlatinumScoops</h1>
+
+<header>
+  <div class="nav-container">
+    <h2>PlatinumScoops</h2>
     <nav>
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
-      <a href="#areas">Service Areas</a>
+      <a href="#areas">Areas</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section id="hero">
-      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80" alt="Technician scooping dog waste from lawn" style="width:100%;height:auto;">
-      <h2>Pet Waste Removal Made Easy</h2>
-      <p>Keeping yards clean, healthy, and odor‑free since 2020.</p>
-    </section>
+<section class="hero">
+  <div>
+    <h1>Pet Waste Removal Made Easy</h1>
+    <p>We scoop the poop, so you don't have to.</p>
+    <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+  </div>
+</section>
 
-    <section id="services">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Weekly Scooping</li>
-        <li>Bi‑Weekly Scooping</li>
-        <li>One‑Time Cleanups</li>
-        <li>Commercial & HOA</li>
-      </ul>
-    </section>
+<section id="services" class="section">
+  <div class="container">
+    <h2 style="text-align:center;">Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <div style="font-size:2.5rem;">🐾</div>
+        <h3>Weekly Scooping</h3>
+        <p>Perfect for busy pet owners who want a consistently clean yard.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;">⏱️</div>
+        <h3>Bi‑Weekly Scooping</h3>
+        <p>Cost‑effective option for lower‑traffic yards.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;">🎉</div>
+        <h3>One‑Time Cleanup</h3>
+        <p>Hosting an event or moving? We'll get your yard guest‑ready.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;">🏢</div>
+        <h3>Commercial & HOA</h3>
+        <p>Keep common areas clean and compliant with our bulk plans.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="pricing">
-      <h2>Pricing</h2>
-      <p>Starting at $12 per visit. No contracts, cancel anytime.</p>
-    </section>
+<section id="pricing" class="section">
+  <div class="container">
+    <h2 style="text-align:center;">Transparent Pricing</h2>
+    <p style="text-align:center;max-width:600px;margin:0 auto;">Starting at just <strong>$12 per visit</strong>. No contracts, cancel anytime.</p>
+  </div>
+</section>
 
-    <section id="areas">
-      <h2>Service Areas</h2>
-      <p>YourCity, NeighborTown, and nearby suburbs.</p>
-    </section>
+<section id="areas" class="section">
+  <div class="container">
+    <h2 style="text-align:center;">Service Areas</h2>
+    <p style="text-align:center;">Serving <strong>YourCity</strong>, <strong>NeighborTown</strong>, and surrounding suburbs.</p>
+  </div>
+</section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: info@platinumscoops.com</p>
-    </section>
-  </main>
+<section id="contact" class="section">
+  <div class="container" style="text-align:center;">
+    <h2>Request Service</h2>
+    <p>Email us at <a href="mailto:info@platinumscoops.com">info@platinumscoops.com</a> or call <a href="tel:+15551234567">555‑123‑4567</a>.</p>
+    <a href="mailto:info@platinumscoops.com" class="btn btn-primary">Email Us</a>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; <span id="year"></span> PlatinumScoops. All rights reserved.</p>
-  </footer>
+<footer>
+  &copy; <span id="year"></span> PlatinumScoops. All rights reserved.
+</footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
