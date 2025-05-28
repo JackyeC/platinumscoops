@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | Platinum Scoops™</title>
+  <meta name="description" content="Eco-luxe add-ons and goodies for the modern dog parent in Waco & beyond." />
+  <link rel="canonical" href="https://platinumscoops.netlify.app/shop" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#7BBF8C;
+      --sky:#85C5E7;
+      --white:#FFFFFF;
+      --gray-bg:#F6F6F6;
+      --text:#333333;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Lato',sans-serif;color:var(--text);background:var(--white)}
+    h1,h2{font-family:'Playfair Display',serif;margin-top:0;color:var(--text)}
+    header{padding:4rem 1rem;text-align:center}
+    .products{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));max-width:1200px;margin:auto;padding:2rem 1rem}
+    .card{border:1px solid #eee;border-radius:8px;overflow:hidden;background:var(--white);display:flex;flex-direction:column}
+    .card img{width:100%;height:220px;object-fit:cover}
+    .card-body{padding:1.25rem;flex:1}
+    .price{font-size:1.1rem;font-weight:700;margin:0.5rem 0}
+    .btn-buy{background:var(--green);color:var(--white);padding:0.6rem 1rem;border:none;border-radius:4px;cursor:pointer;font-weight:700;transition:background .3s;width:100%}
+    .btn-buy:hover{background:var(--sky)}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Platinum Picks Shop</h1>
+    <p>Luxury add-ons and eco‑friendly gear for pampered pups & pristine yards.</p>
+  </header>
+
+  <section class="products">
+    <!-- Placeholder products; replace IDs & images when ready -->
+    <div class="card">
+      <img src="https://via.placeholder.com/400x220?text=OSO+Fresh%E2%84%A2+Spray" alt="OSO Fresh Spray Bottle">
+      <div class="card-body">
+        <h2>OSO Fresh™ Spray Bottle</h2>
+        <p class="price">$14.99</p>
+        <button class="btn-buy" data-id="oso-fresh" onclick="checkout(this)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x220?text=Compostable+Poop+Bags" alt="Compostable Poop Bags">
+      <div class="card-body">
+        <h2>Compostable Poop Bags (60ct)</h2>
+        <p class="price">$9.99</p>
+        <button class="btn-buy" data-id="compost-bags" onclick="checkout(this)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    async function checkout(btn){
+      const id = btn.dataset.id;
+      try{
+        const res = await fetch('/.netlify/functions/create-checkout-session',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({productId:id})
+        });
+        const data = await res.json();
+        if(data.url){
+          window.location = data.url;
+        }else{
+          alert('Error creating checkout session');
+        }
+      }catch(err){
+        console.error(err);
+        alert('Checkout error');
+      }
+    }
+  </script>
+</body>
+</html>
