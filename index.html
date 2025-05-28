@@ -1,96 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Platinum Scoops™ | Texas Eco‑Chic Yard Care</title>
-  <meta name="description" content="Waco’s first science‑forward dog waste removal company. Locally owned, pet approved, soil safe." />
-
-  <!-- ✅ Open Graph Tags -->
-  <meta property="og:title" content="Platinum Scoops™ | Texas Eco‑Chic Yard Care" />
-  <meta property="og:description" content="Locally owned, pet approved, soil safe. Waco’s first science-forward dog waste removal company." />
-  <meta property="og:image" content="https://platinumscoops.netlify.app/og-image.jpg" />
-  <meta property="og:url" content="https://platinumscoops.netlify.app/" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- ✅ Favicon Options -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <!-- Optional: Use this if you prefer a custom PNG favicon -->
-  <!-- <link rel="icon" href="/platinumscoops-favicon.png" type="image/png" /> -->
-
-  <link rel="canonical" href="https://platinumscoops.netlify.app/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platinum Scoops | Pet Waste Removal in Central Texas</title>
+  <meta name="description" content="Platinum Scoops keeps yards clean across Woodway, Waco & surrounding Central Texas communities. Book professional pet waste removal today.">
+  <link rel="canonical" href="https://platinumscoops.netlify.app/">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --green:#7BBF8C;
-      --sky:#85C5E7;
-      --white:#FFFFFF;
-      --gray-bg:#F6F6F6;
-      --text:#333333;
+    :root {
+      --primary:#1e88e5;
+      --accent:#ffb300;
+      --dark:#263238;
+      --light:#f5f5f5;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:'Lato',sans-serif;color:var(--text);line-height:1.6;background:var(--white)}
-    h1,h2,h3{font-family:'Playfair Display',serif;margin-top:0;color:var(--text)}
-    header{display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:6rem 1rem;background:url('hero-bg.jpg') center/cover no-repeat;color:var(--white)}
-    header h1{font-size:2.8rem;margin-bottom:1rem}
-    .btn-primary{background:var(--green);color:var(--white);padding:0.75rem 2rem;border-radius:4px;text-decoration:none;font-weight:700;transition:background .3s}
-    .btn-primary:hover{background:var(--sky)}
-    section{padding:4rem 1rem;max-width:900px;margin:auto}
-    section:nth-of-type(even){background:var(--gray-bg)}
-    .grid{display:grid;gap:1.5rem}
-    .grid-2{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-    .card{background:var(--white);border:1px solid #eee;border-radius:6px;padding:1.5rem}
-    footer{background:#222;color:var(--white);padding:2rem 1rem;text-align:center}
-    footer a{color:var(--white);text-decoration:none}
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Lato',sans-serif;}
+    body{color:var(--dark);background:#fff;line-height:1.6;}
+    .container{width:90%;max-width:1100px;margin:auto;}
+    header.hero{background:url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;height:80vh;display:flex;align-items:center;position:relative;color:#fff;}
+    header.hero::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);}    
+    .hero-content{position:relative;z-index:2;text-align:center;width:100%;}
+    .hero-content h1{font-size:3rem;margin-bottom:1rem;}
+    .hero-content p{font-size:1.25rem;margin-bottom:2rem;}
+    .btn-primary{background:var(--accent);color:#000;padding:.75rem 2rem;border:none;border-radius:4px;font-weight:700;text-decoration:none;transition:background .3s;}
+    .btn-primary:hover{background:#ffc107;}
+    section{padding:4rem 0;}
+    h2.section-title{text-align:center;font-size:2rem;margin-bottom:2rem;position:relative;}
+    h2.section-title::after{content:'';width:60px;height:4px;background:var(--primary);display:block;margin:.5rem auto 0;}
+    .benefits,.locations{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
+    .card{background:var(--light);padding:2rem;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.1);}    
+    footer{background:var(--dark);color:#fff;text-align:center;padding:1.5rem 0;}
+    @media (max-width:600px){
+      .hero-content h1{font-size:2.25rem;}
+      .hero-content p{font-size:1rem;}
+    }
   </style>
 </head>
 <body>
+  <header class="hero">
+    <div class="container hero-content">
+      <h1>Central Texas’ Trusted Pet Waste Removal</h1>
+      <p>Enjoy a spotless yard without lifting a scoop. Platinum Scoops keeps your lawn clean, safe, and odor‑free.</p>
+      <a href="#locations" class="btn-primary">View Service Areas</a>
+    </div>
+  </header>
 
-<header>
-  <h1>Texas Eco‑Chic Yard Care</h1>
-  <p>Waco’s first science‑forward dog waste removal company.<br>Locally owned. Pet approved. Soil safe.</p>
-  <a href="/contact" class="btn-primary">Get a Free Quote</a>
-</header>
+  <section id="why" class="container">
+    <h2 class="section-title">Why Choose Us?</h2>
+    <div class="benefits">
+      <div class="card">
+        <h3>Eco‑Friendly Disposal</h3>
+        <p>We use soil‑safe sanitizers and responsible waste disposal to protect your family and the planet.</p>
+      </div>
+      <div class="card">
+        <h3>Flexible Plans</h3>
+        <p>Weekly, bi‑weekly, or one‑time visits—tailored schedules that fit your needs and budget.</p>
+      </div>
+      <div class="card">
+        <h3>Platinum Guarantee</h3>
+        <p>Not 100% satisfied? We’ll re‑scoop for free. That’s our promise to every customer.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="why">
-  <h2>Why Choose Platinum Scoops™?</h2>
-  <div class="grid grid-2">
-    <div class="card"><h3>Insured &amp; Background‑Checked</h3><p>Jackye &amp; Todd are fully vetted for your peace of mind.</p></div>
-    <div class="card"><h3>Eco‑Friendly Disposal</h3><p>We compost and dispose responsibly—good for soil, safe for pets.</p></div>
-    <div class="card"><h3>Flexible Scheduling</h3><p>Weekly, bi‑weekly, or custom plans that fit your Texas lifestyle.</p></div>
-    <div class="card"><h3>100% Satisfaction</h3><p>If you’re not thrilled, Jackye &amp; Todd will make it right—guaranteed.</p></div>
-  </div>
-</section>
+  <section id="locations" class="container">
+    <h2 class="section-title">Service Areas</h2>
+    <p style="text-align:center;margin-bottom:2rem;">Proudly serving homeowners across McLennan County.</p>
+    <div class="locations">
+      <div class="card">
+        <h3><a href="/poop-scooping-woodway-tx.html">Woodway, TX</a></h3>
+        <p>Fast, friendly scooping for Woodway backyards—book online in under 60 seconds.</p>
+      </div>
+      <div class="card">
+        <h3><a href="/poop-scooping-waco-tx.html">Waco, TX</a></h3>
+        <p>From Downtown to Lake Waco, we keep lawns fresh and guest‑ready all year long.</p>
+      </div>
+      <div class="card">
+        <h3><a href="/services.html">More Cities Coming Soon</a></h3>
+        <p>We’re expanding! Follow us for updates as we add new Central Texas neighborhoods.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="areas">
-  <h2>Where We Scoop</h2>
-  <p>Keeping Central Texas yards clean &amp; green:</p>
-  <ul>
-    <li><a href="/woodway">Woodway, TX</a></li>
-    <li><a href="/waco">Waco, TX</a></li>
-    <li><a href="/hewitt">Hewitt, TX</a></li>
-    <li><a href="/china-spring">China Spring, TX</a></li>
-  </ul>
-</section>
+  <section id="growth" class="container">
+    <h2 class="section-title">Future Growth & User Experience</h2>
+    <p style="text-align:center;">Our online booking and secure payments make scheduling effortless. As we grow, expect even faster response times, new service add‑ons, and the same Platinum quality you trust.</p>
+  </section>
 
-<section id="reviews">
-  <h2>What Neighbors Are Saying</h2>
-  <!-- Review Harvest carousel widget -->
-  <div id="review-harvest-carousel"></div>
-  <script src="https://widget.reviewharvest.com/widget/carousel?business-id=86524cb1-c622-44ef-87e0-de6d437b8fad&tag=carousel&star-color=%23FFC107&button-color=%237BBF8C&button-text-color=%23ffffff&card-background-color=%23FFFFFF&text-color=%23333333&auto-slide-interval=5000&show-reviewer=true" defer></script>
-</section>
-
-<footer>
-  <p>&copy; <span id="year"></span> Platinum Scoops™. All rights reserved.</p>
-  <p><a href="tel:+12545551234">Call: (254) 555‑1234</a> | <a href="mailto:info@platinumscoops.com">info@platinumscoops.com</a></p>
-  <p>Made with 💚 in Waco, TX by Jackye &amp; Todd. Eco-safe. Family-owned. Fully insured.</p>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
+  <footer>
+    <p>&copy; 2025 Platinum Scoops. All rights reserved.</p>
+  </footer>
 </body>
 </html>
