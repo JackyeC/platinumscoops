@@ -3,12 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Platinum Scoops | Pet Waste Removal &amp; More in Central Texas</title>
-  <meta name="description" content="Professional pet waste removal &amp; yard care for homes and businesses in Waco, Woodway, Hewitt, Robinson &amp; beyond. Book Platinum Scoops today!">
-  <link rel="canonical" href="https://platinumscoops.com/">
+  <title>Platinum Scoops | Premium Pet Waste Removal in Central Texas</title>
+  <meta name="description" content="Platinum Scoops keeps lawns spotless in Waco, Woodway, Hewitt, Robinson &amp; beyond. Book residential &amp; commercial scooping online in seconds.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    :root{
+      --primary:#00AEEF;
+      --dark:#222;
+      --light:#f8f9fa;
+    }
+    body{
+      font-family:'Inter',sans-serif;
+      color:var(--dark);
+      scroll-behavior:smooth;
+    }
+    .btn-primary{
+      background:var(--primary);
+      border:none;
+    }
+    .hero{
+      background:url('/assets/hero-dog.jpg') center/cover no-repeat;
+      min-height:80vh;
+      display:flex;
+      align-items:center;
+      color:#fff;
+    }
+    .hero-overlay{
+      background:rgba(0,0,0,.55);
+      position:absolute;
+      inset:0;
+    }
+    .hero-content{
+      position:relative;
+      z-index:2;
+    }
+    .section-title{
+      font-weight:700;
+      margin-bottom:1rem;
+    }
+    .benefit-icon{
+      width:56px;
+      height:56px;
+      background:var(--primary);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      margin-bottom:.75rem;
+    }
+    footer{
+      background:var(--dark);
+      color:#fff;
+    }
+  </style>
+
   <!-- Jobber, Shopify & Stripe scripts -->
   <script defer src="https://cdn.jobberstatic.com/jobber.js"></script>
   <script defer src="https://cdn.shopify.com/s/assets/external/app.js"></script>
@@ -17,200 +70,188 @@
   <!-- Structured data for Google Business Profile reviews -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Platinum Scoops",
-    "image": "https://platinumscoops.com/logo.png",
-    "url": "https://platinumscoops.com",
-    "telephone": "+1-555-123-4567",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Main St",
-      "addressLocality": "Waco",
-      "addressRegion": "TX",
-      "postalCode": "76701",
-      "addressCountry": "US"
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Platinum Scoops",
+    "image":"https://platinumscoops.com/logo.png",
+    "telephone":"+1-555-123-4567",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"123 Main St",
+      "addressLocality":"Waco",
+      "addressRegion":"TX",
+      "postalCode":"76701",
+      "addressCountry":"US"
     },
-    "review": [{
-      "@type": "Review",
-      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-      "author": "Review Harvest"
-    }]
+    "aggregateRating":{
+      "@type":"AggregateRating",
+      "ratingValue":"5",
+      "reviewCount":"187"
+    },
+    "review":[
+      {
+        "@type":"Review",
+        "author":"Review Harvest",
+        "reviewRating":{"@type":"Rating","ratingValue":"5"},
+        "reviewBody":"Fantastic, reliable & friendly service!"
+      }
+    ]
   }
   </script>
-
-  <style>
-    /* --- Maxbone‑inspired minimal aesthetic --- */
-    :root {
-      --primary: #1e90ff;
-      --accent: #f7b703;
-      --dark: #1d1d1d;
-      --light: #f9f9f9;
-      --radius: 8px;
-      --shadow: 0 2px 8px rgba(0,0,0,0.08);
-      font-family: 'Inter', sans-serif;
-    }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{background:var(--light);color:var(--dark);line-height:1.6;}
-    .container{width:min(90%,1200px);margin:auto;padding:4rem 0;}
-
-    /* Hero */
-    .hero{background:url('/images/hero-bg.jpg') center/cover no-repeat;color:#fff;text-align:center;padding:6rem 1rem;}
-    .hero h1{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem;}
-    .hero p{font-size:1.25rem;margin-bottom:2rem;}
-
-    /* Buttons */
-    .btn{display:inline-block;padding:.75rem 1.5rem;border-radius:var(--radius);font-weight:600;text-decoration:none;transition:.3s;}
-    .btn-primary{background:var(--primary);color:#fff;}
-    .btn-primary:hover{background:#0f78e5;}
-    .btn-secondary{background:var(--accent);color:var(--dark);}  
-    .btn-secondary:hover{background:#e8a700;}
-    .btn-tertiary{background:transparent;border:2px solid var(--primary);color:var(--primary);}  
-    .btn-tertiary:hover{background:var(--primary);color:#fff;}
-
-    /* Why choose us */
-    .why .grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
-    .card{background:#fff;padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow);}
-
-    /* Services */
-    .tabs{display:flex;gap:1rem;margin-bottom:2rem;}
-    .tab{border:1px solid var(--primary);color:var(--primary);padding:.5rem 1rem;border-radius:var(--radius);cursor:pointer;background:#fff;}
-    .tab.active,.tab:hover{background:var(--primary);color:#fff;}
-    .tab-content{display:none;}
-    .tab-content.active{display:block;}
-
-    /* Blog */
-    .posts{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
-
-    /* Footer */
-    footer{background:var(--dark);color:#fff;text-align:center;padding:2rem 1rem;}
-    .location-list{list-style:none;display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:center;padding:0;}
-  </style>
 </head>
 <body>
 
-  <!-- ===== Hero ===== -->
-  <header class="hero">
-    <div class="container">
-      <h1>Central Texas’ Platinum Standard in Poop Scooping</h1>
-      <p>Fast, reliable, and eco‑friendly pet waste removal for homes &amp; businesses.</p>
-      <a href="#book" class="btn btn-primary">Book a Clean‑Up</a>
+  <!-- HERO -->
+  <header class="hero position-relative text-center text-lg-start">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content py-5">
+      <h1 class="display-4 fw-bold">Central Texas’ #1 Pet Waste Removal</h1>
+      <p class="lead mb-4">We scoop, sanitize &amp; deodorize so you can enjoy a spotless yard all year round.</p>
+      <a href="#book" class="btn btn-primary btn-lg">Get a Free Quote</a>
     </div>
   </header>
 
-  <!-- ===== Why Choose Us ===== -->
-  <section id="why" class="why">
+  <!-- WHY CHOOSE US -->
+  <section class="py-5 bg-light" id="why">
     <div class="container">
-      <h2>Why Choose Platinum Scoops?</h2>
-      <div class="grid">
-        <div class="card"><h3>Local &amp; Trusted</h3><p>Serving Waco, Woodway, Hewitt, Robinson &amp; nearby communities.</p></div>
-        <div class="card"><h3>Eco‑Friendly Disposal</h3><p>We compost and dispose responsibly to keep Central Texas green.</p></div>
-        <div class="card"><h3>100% Satisfaction</h3><p>If you’re not happy, we’ll make it right—guaranteed.</p></div>
-        <div class="card"><h3>Jobber Client Hub</h3><p>Easy online booking, scheduling, and payments powered by Jobber.</p></div>
+      <h2 class="section-title text-center">Why Choose Platinum Scoops?</h2>
+      <div class="row g-4 mt-4">
+        <div class="col-md-4 text-center">
+          <div class="benefit-icon mx-auto"><i class="bi bi-shield-check fs-4"></i></div>
+          <h5>100% Satisfaction</h5>
+          <p>We guarantee a spotless yard or we’ll re‑scoop for free.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="benefit-icon mx-auto"><i class="bi bi-calendar-check fs-4"></i></div>
+          <h5>Flexible Scheduling</h5>
+          <p>Weekly, bi‑weekly or one‑time—book exactly what you need.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="benefit-icon mx-auto"><i class="bi bi-leaf-heart fs-4"></i></div>
+          <h5>Eco‑Friendly Disposal</h5>
+          <p>We compost waste responsibly, keeping Texas greener.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Services ===== -->
-  <section id="services" class="services">
+  <!-- SERVICE AREAS -->
+  <section class="py-5" id="service-areas">
     <div class="container">
-      <h2>Our Services</h2>
-      <div class="tabs">
-        <button class="tab active" data-target="residential">Residential</button>
-        <button class="tab" data-target="commercial">Commercial</button>
+      <h2 class="section-title text-center">Service Areas</h2>
+      <p class="text-center mb-4">Proudly serving Waco, Woodway, Hewitt, Robinson, China Spring, Bellmead &amp; surrounding towns.</p>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <ul class="list-group list-group-flush shadow-sm">
+            <li class="list-group-item">Waco, TX <small class="text-muted">76701</small></li>
+            <li class="list-group-item">Woodway, TX <small class="text-muted">76712</small></li>
+            <li class="list-group-item">Hewitt, TX <small class="text-muted">76643</small></li>
+            <li class="list-group-item">Robinson, TX <small class="text-muted">76706</small></li>
+            <li class="list-group-item">China Spring, TX <small class="text-muted">76633</small></li>
+            <li class="list-group-item">Bellmead, TX <small class="text-muted">76705</small></li>
+          </ul>
+        </div>
       </div>
-      <div class="tab-content active" id="residential">
-        <h3>Residential Poop Scooping</h3>
-        <ul>
-          <li>One‑time, weekly, or bi‑weekly clean‑ups</li>
-          <li>Deodorizing treatments</li>
-          <li>Yard sanitization</li>
-        </ul>
-      </div>
-      <div class="tab-content" id="commercial">
-        <h3>Commercial &amp; HOA Services</h3>
-        <ul>
-          <li>Apartment complexes &amp; HOAs</li>
-          <li>Parks &amp; recreation areas</li>
-          <li>Pet‑friendly businesses</li>
-        </ul>
-      </div>
-      <a href="#book" class="btn btn-secondary">Get a Quote</a>
     </div>
   </section>
 
-  <!-- ===== Blog ===== -->
-  <section id="blog" class="blog">
+  <!-- RESIDENTIAL & COMMERCIAL -->
+  <section class="py-5 bg-light" id="services">
     <div class="container">
-      <h2>Scoop &amp; Tell</h2>
-      <div class="posts" id="blog-posts"><!-- Shopify blog posts will load here --></div>
-      <a href="/blog" class="btn btn-tertiary">Read More Articles</a>
+      <h2 class="section-title text-center">Our Services</h2>
+      <div class="row align-items-center g-5 mt-4">
+        <div class="col-md-6">
+          <img src="/assets/residential.jpg" alt="Residential scooping" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+          <h3>Residential Scooping</h3>
+          <p>From single‑family yards to apartment complexes, we keep your outdoor spaces clean, safe &amp; odor‑free.</p>
+          <a href="#book" class="btn btn-primary">Book Residential</a>
+        </div>
+      </div>
+      <hr class="my-5">
+      <div class="row align-items-center g-5 flex-md-row-reverse">
+        <div class="col-md-6">
+          <img src="/assets/commercial.jpg" alt="Commercial scooping" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+          <h3>Commercial Scooping</h3>
+          <p>We partner with HOAs, parks, vets &amp; dog‑friendly businesses for large‑scale waste management solutions.</p>
+          <a href="#book" class="btn btn-primary">Book Commercial</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===== Locations ===== -->
-  <section id="locations" class="locations">
+  <!-- SCOOP & TELL BLOG -->
+  <section class="py-5" id="blog">
     <div class="container">
-      <h2>Service Areas</h2>
-      <p>We proudly scoop in:</p>
-      <ul class="location-list">
-        <li>Waco, TX</li>
-        <li>Woodway, TX</li>
-        <li>Hewitt, TX</li>
-        <li>Robinson, TX</li>
-        <li>and surrounding communities</li>
-      </ul>
+      <h2 class="section-title text-center">Scoop &amp; Tell</h2>
+      <p class="text-center mb-5">Tips, news &amp; stories from the Platinum Scoops crew.</p>
+      <div class="row g-4">
+        <!-- Example blog cards -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="/assets/blog-1.jpg" class="card-img-top" alt="Blog 1">
+            <div class="card-body">
+              <h5 class="card-title">5 Reasons to Scoop Weekly</h5>
+              <p class="card-text">Regular scooping protects your lawn, pets &amp; family. Here’s why weekly is best...</p>
+              <a href="/blog/5-reasons-to-scoop-weekly" class="stretched-link">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="/assets/blog-2.jpg" class="card-img-top" alt="Blog 2">
+            <div class="card-body">
+              <h5 class="card-title">Eco‑Friendly Waste Disposal</h5>
+              <p class="card-text">See how we’re turning pet waste into green energy for Central Texas...</p>
+              <a href="/blog/eco-friendly-disposal" class="stretched-link">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="/assets/blog-3.jpg" class="card-img-top" alt="Blog 3">
+            <div class="card-body">
+              <h5 class="card-title">Meet the Team</h5>
+              <p class="card-text">Get to know the friendly faces who keep your yard clean and safe...</p>
+              <a href="/blog/meet-the-team" class="stretched-link">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===== Footer ===== -->
-  <footer>
+  <!-- BOOKING (Stripe + Jobber) -->
+  <section class="py-5 bg-primary text-white text-center" id="book">
     <div class="container">
-      <p>&copy; <span id="year"></span> Platinum Scoops. All rights reserved.</p>
+      <h2 class="section-title">Ready for a Spotless Yard?</h2>
+      <p class="mb-4">Secure checkout powered by Stripe. Scheduling managed by Jobber.</p>
+      <button id="checkout" class="btn btn-light btn-lg text-primary">Start Checkout</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4">
+    <div class="container text-center">
+      <small>&copy; <span id="year"></span> Platinum Scoops. All rights reserved.</small>
     </div>
   </footer>
 
-  <!-- ===== Jobber Booking Widget Placeholder ===== -->
-  <div id="book" data-jobber-widget data-token="YOUR_JOBBER_TOKEN"></div>
-
-  <!-- ===== Stripe Checkout ===== -->
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-      btn.addEventListener('click', async (e) => {
-        e.preventDefault();
-        const stripe = Stripe('pk_live_REPLACE_WITH_YOUR_KEY');
-        const { sessionId } = await fetch('/.netlify/functions/create-checkout-session', { method: 'POST' }).then(r => r.json());
-        stripe.redirectToCheckout({ sessionId });
-      });
-    });
-  </script>
-
-  <!-- ===== Shopify Blog Loader ===== -->
-  <script>
-    fetch('/collections/blog-posts?view=json')
-      .then(r => r.json())
-      .then(posts => {
-        const container = document.getElementById('blog-posts');
-        posts.slice(0,3).forEach(post => {
-          const article = document.createElement('article');
-          article.innerHTML = `<h3>${post.title}</h3><p>${post.excerpt}</p><a href="${post.url}">Read more</a>`;
-          container.appendChild(article);
-        });
-      });
-  </script>
-
-  <!-- ===== Tabs Script ===== -->
-  <script>
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.target).classList.add('active');
-      });
-    });
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 
+    // Stripe checkout
+    const stripe = Stripe('pk_live_REPLACE_WITH_YOUR_KEY');
+    document.getElementById('checkout').addEventListener('click', async () => {
+      const { sessionId } = await fetch('/.netlify/functions/create-checkout-session', { method: 'POST' })
+        .then(r => r.json());
+      stripe.redirectToCheckout({ sessionId });
+    });
+  </script>
 </body>
 </html>
