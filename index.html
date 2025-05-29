@@ -224,12 +224,26 @@
     footer {
       background: var(--dark);
       color: #fff;
-      text-align: center;
-      padding: 1.5rem 0;
-    }
+  <    }
   </style>
 </head>
 
+<body>>
+  <!-- Announcement Bar -->
+  <div class="announcement">CLAIM YOUR FREE CLEANUP TODAY!</div>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="/" class="logo">Platinum Scoops</a>
+      <ul class="nav-links">
+        <li><a href="#booking">Schedule a Scoop</a></li>
+        <li><a href="#benefits">Your Routine</a></li>
+        <li><a href="#shop">The Essentials</a></li>
+        <li><a href="#service-areas">Where We Work</a></li>
+      </ul>
+    </div>
+  </nav>
 
   
   <!-- Hero Section -->
@@ -252,6 +266,22 @@
         <li><strong>Flexible Scheduling:</strong> Weekly, bi‑weekly, or one‑time cleanups.</li>
       </ul>
     </div>
+
+    
+<!-- Booking Section -->
+<section id="booking" class="booking-section">
+  <div class="container">
+    <h2>Schedule a Scoop</h2>
+    <!-- Jobber Booking Widget -->
+    <div id="08639c40-c72a-485f-8e76-f80064f23f20"></div>
+    <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
+    <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"
+            clienthub_id="08639c40-c72a-485f-8e76-f80064f23f20"
+            form_url="https://clienthub.getjobber.com/client_hubs/08639c40-c72a-485f-8e76-f80064f23f20/public/work_request/embedded_work_request_form">
+    </script>
+  </div>
+</section>
+
   </section>
 
   <!-- Service Areas -->
@@ -266,6 +296,106 @@
         <a href="/china-spring" class="area-card">China Spring, TX</a>
       </div>
       <p style="text-align:center; margin-top:2rem;">Looking for service somewhere else? <a href="/contact" style="color:#ffd166;">Contact us</a> and we'll see if we can help!</p>
+  
+<!-- Shop Section -->
+<section id="shop" class="shop-section">
+  <div class="container">
+    <h2>The Essentials</h2>
+    <div id='product-component-1748535197690'></div>
+  </div>
+</section>
+
+<!-- Shopify Buy Button Script -->
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'upfsy5-3a.myshopify.com',
+      storefrontAccessToken: 'af85f63c3bdebe73abb2411fa75075c8',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '9871144943892',
+        node: document.getElementById('product-component-1748535197690'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "calc(25% - 20px)",
+                  "margin-left": "20px",
+                  "margin-bottom": "50px"
+                }
+              }
+            },
+            "text": {
+              "button": "Add to cart"
+            }
+          },
+          "productSet": {
+            "styles": {
+              "products": {
+                "@media (min-width: 601px)": {
+                  "margin-left": "-20px"
+                }
+              }
+            }
+          },
+          "modalProduct": {
+            "contents": {
+              "img": false,
+              "imgWithCarousel": true,
+              "button": false,
+              "buttonWithQuantity": true
+            },
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0px",
+                  "margin-bottom": "0px"
+                }
+              }
+            },
+            "text": {
+              "button": "Add to cart"
+            }
+          },
+          "option": {},
+          "cart": {
+            "text": {
+              "total": "Subtotal",
+              "button": "Checkout"
+            }
+          },
+          "toggle": {}
+        },
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+
     </div>
   </section>
 
