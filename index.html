@@ -1,89 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Platinum Scoops | Pet Waste Removal in Waco & Central Texas</title>
-  <meta name="description" content="Platinum Scoops keeps yards clean in Waco, Woodway, Hewitt and surrounding Central Texas. Book professional pet waste removal service today!">
+  <title>Platinum Scoops | Pet Waste Removal – Waco & Central Texas</title>
+  <meta name="description" content="Platinum Scoops provides professional pet waste removal in Waco, Woodway, Hewitt, Robinson, and surrounding Central Texas. Book your first scoop today!">
   <link rel="canonical" href="https://platinumscoops.com/">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary:#1e8e85;
-      --accent:#ffb300;
-      --dark:#263238;
-      --light:#f5f5f5;
-      --radius:4px;
+    :root{
+      --primary:#1E90FF;
+      --accent:#FFB703;
+      --dark:#1F2937;
+      --light:#F9FAFB;
+      --radius:6px;
     }
-    *{box-sizing:border-box;margin:0;padding:0;font-family:'Lato',sans-serif;}
-    body{color:var(--dark);background:#fff;line-height:1.6;}
-    .container{width:90%;max-width:1100px;margin:auto;text-align:center;padding:4rem 0;}
-    /* Hero */
-    .hero{background:url('https://images.unsplash.com/photo-1525253086316-d0c936c814f8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;height:80vh;display:flex;align-items:center;position:relative;}
-    .hero::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.45);}
-    .hero .container{position:relative;z-index:2;color:#fff;}
-    .hero h1{font-size:3rem;margin-bottom:1rem;}
-    .hero p{font-size:1.25rem;margin-bottom:2rem;}
-    .btn-primary{display:inline-block;padding:.75rem 2rem;background:var(--accent);color:#000;font-weight:700;border-radius:var(--radius);text-decoration:none;transition:background .3s;}
-    .btn-primary:hover{background:#ffc720;}
-    /* Sections */
-    .section-title{text-align:center;font-size:2rem;margin-bottom:2rem;position:relative;}
-    .section-title::after{content:'';width:60px;height:4px;background:var(--primary);display:block;margin:.5rem auto 0;}
-    /* Benefits */
-    .benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;list-style:none;margin-top:2rem;}
-    .benefits li{background:var(--light);padding:2rem;border-radius:var(--radius);box-shadow:0 2px 6px rgba(0,0,0,.1);} 
-    .benefits h3{margin-bottom:.5rem;color:var(--primary);} 
-    /* Locations */
-    .locations{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem;}
-    .location-card{display:block;padding:1.5rem;border:2px solid var(--primary);border-radius:var(--radius);color:var(--primary);font-weight:700;text-decoration:none;transition:background .3s,color .3s;}
-    .location-card:hover{background:var(--primary);color:#fff;}
-    footer{background:var(--dark);color:#fff;text-align:center;padding:1rem 0;margin-top:4rem;}
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif;}
+    body{color:var(--dark);background:var(--light);line-height:1.6;}
+    header{
+      background:url('https://images.unsplash.com/photo-1583511655826-1e5a8f8f3c6d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      height:85vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      text-align:center;
+      color:#fff;
+    }
+    header::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      z-index:0;
+    }
+    header .content{
+      position:relative;
+      z-index:1;
+      max-width:900px;
+      padding:0 1rem;
+    }
+    h1{font-size:clamp(2.25rem,5vw,4rem);margin-bottom:1rem;font-weight:700;}
+    p.lead{font-size:clamp(1rem,2.5vw,1.5rem);margin-bottom:2rem;}
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:#000;
+      padding:.85rem 2rem;
+      font-weight:700;
+      border-radius:var(--radius);
+      text-decoration:none;
+      transition:.3s;
+    }
+    .btn:hover{background:#ffd166;}
+    section{
+      padding:4rem 1rem;
+      max-width:1100px;
+      margin:auto;
+    }
+    .section-title{
+      font-size:2rem;
+      text-align:center;
+      margin-bottom:2rem;
+      color:var(--primary);
+    }
+    .grid{
+      display:grid;
+      gap:2rem;
+    }
+    .benefits{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+    .benefit{
+      background:#fff;
+      padding:2rem 1.5rem;
+      border-radius:var(--radius);
+      box-shadow:0 2px 6px rgba(0,0,0,.05);
+      text-align:center;
+    }
+    .benefit h3{margin-bottom:.75rem;color:var(--primary);}    
+    .locations ul{
+      list-style:none;
+      columns:2;
+      max-width:600px;
+      margin:1.5rem auto 0;
+      padding:0;
+    }
+    .locations a{
+      color:var(--dark);
+      text-decoration:none;
+      transition:.2s;
+    }
+    .locations a:hover{color:var(--primary);}    
+    footer{
+      background:var(--dark);
+      color:#fff;
+      text-align:center;
+      padding:1.5rem;
+      font-size:.9rem;
+    }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Central Texas’s #1 Pet Waste Removal Service</h1>
-      <p>Weekly, bi‑weekly & one‑time scooping for a cleaner, healthier yard.</p>
-      <a href="/book" class="btn-primary">Get a Free Quote</a>
+  <header>
+    <div class="content">
+      <h1>Central Texas’ #1 Pet Waste Removal Service</h1>
+      <p class="lead">From Waco to Woodway, Platinum Scoops keeps yards fresh, clean, and ready for play.</p>
+      <a href="https://platinumscoops.com/book" class="btn">Book Your First Scoop</a>
     </div>
   </header>
 
-  <section id="benefits" class="container">
+  <section class="why-us">
     <h2 class="section-title">Why Choose Platinum Scoops?</h2>
-    <ul class="benefits">
-      <li>
-        <h3>Locally Owned &amp; Operated</h3>
-        <p>We live where we scoop—serving our neighbors across Waco and McLennan County.</p>
-      </li>
-      <li>
-        <h3>100% Satisfaction Guarantee</h3>
-        <p>If you’re not happy, we’ll make it right—no questions asked.</p>
-      </li>
-      <li>
-        <h3>Eco‑Friendly Disposal</h3>
-        <p>We remove waste and dispose of it responsibly so it never ends up in your trash can.</p>
-      </li>
-      <li>
-        <h3>Pet &amp; Family Safe</h3>
-        <p>We sanitize tools and wear fresh booties at every visit to keep germs out of your yard.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="service-areas" class="container">
-    <h2 class="section-title">Service Areas</h2>
-    <p>We proudly serve homeowners and businesses throughout Central Texas, including:</p>
-    <div class="locations">
-      <a href="/woodway" class="location-card">Woodway, TX</a>
-      <a href="/waco" class="location-card">Waco, TX</a>
-      <a href="/hewitt" class="location-card">Hewitt, TX</a>
-      <a href="/china-spring" class="location-card">China Spring, TX</a>
+    <div class="grid benefits">
+      <div class="benefit">
+        <h3>Weekly & One‑Time Visits</h3>
+        <p>Flexible plans fit your schedule and budget so you never have to worry about a messy lawn.</p>
+      </div>
+      <div class="benefit">
+        <h3>100% Satisfaction</h3>
+        <p>If you’re not thrilled, we’ll re‑scoop for free. Your clean yard is our guarantee.</p>
+      </div>
+      <div class="benefit">
+        <h3>Sanitized Tools</h3>
+        <p>We disinfect equipment between every stop to protect your pets and family.</p>
+      </div>
+      <div class="benefit">
+        <h3>Locally Owned</h3>
+        <p>Born and raised in Waco – we know Central Texas lawns and love serving our neighbors.</p>
+      </div>
     </div>
   </section>
 
+  <section class="locations">
+    <h2 class="section-title">Service Areas</h2>
+    <p style="text-align:center;">We proudly scoop across McLennan County and beyond.</p>
+    <ul>
+      <li><a href="/woodway-pet-waste-removal.html">Woodway, TX</a></li>
+      <li><a href="/waco-pet-waste-removal.html">Waco, TX</a></li>
+      <li><a href="/hewitt-pet-waste-removal.html">Hewitt, TX</a></li>
+      <li><a href="/robinson-pet-waste-removal.html">Robinson, TX</a></li>
+      <li><a href="/china-spring-pet-waste-removal.html">China Spring, TX</a></li>
+      <li><a href="/bellmead-pet-waste-removal.html">Bellmead, TX</a></li>
+    </ul>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Platinum Scoops. All rights reserved.</p>
+    &copy; <span id="year"></span> Platinum Scoops. All rights reserved.
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
