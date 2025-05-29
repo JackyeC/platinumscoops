@@ -1,409 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Platinum Scoops | Pet Waste Removal in Waco & Central Texas</title>
-  <meta name="description" content="Professional pet waste removal serving Waco, Woodway, Hewitt, Robinson & surrounding Central Texas. Book Platinum Scoops today for a cleaner yard and happier pets." />
-  <link rel="canonical" href="https://platinumscoops.com/" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platinum Scoops | Pet Waste Removal &amp; More in Central Texas</title>
+  <meta name="description" content="Professional pet waste removal &amp; yard care for homes and businesses in Waco, Woodway, Hewitt, Robinson &amp; beyond. Book Platinum Scoops today!">
+  <link rel="canonical" href="https://platinumscoops.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Jobber, Shopify & Stripe scripts -->
+  <script defer src="https://cdn.jobberstatic.com/jobber.js"></script>
+  <script defer src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+  <script defer src="https://js.stripe.com/v3/"></script>
+
+  <!-- Structured data for Google Business Profile reviews -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Platinum Scoops",
+    "image": "https://platinumscoops.com/logo.png",
+    "url": "https://platinumscoops.com",
+    "telephone": "+1-555-123-4567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main St",
+      "addressLocality": "Waco",
+      "addressRegion": "TX",
+      "postalCode": "76701",
+      "addressCountry": "US"
+    },
+    "review": [{
+      "@type": "Review",
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "author": "Review Harvest"
+    }]
+  }
+  </script>
+
   <style>
+    /* --- Maxbone‑inspired minimal aesthetic --- */
     :root {
       --primary: #1e90ff;
-      --accent: #ffb703;
-      --dark: #1f2937;
-      --light: #f9fafb;
-      --radius: 0.5rem;
+      --accent: #f7b703;
+      --dark: #1d1d1d;
+      --light: #f9f9f9;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      font-family: 'Inter', sans-serif;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Inter", sans-serif;
-    }
-
-    body {
-      color: var(--dark);
-      background: var(--light);
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 0;
-    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--light);color:var(--dark);line-height:1.6;}
+    .container{width:min(90%,1200px);margin:auto;padding:4rem 0;}
 
     /* Hero */
-    .hero {
-      background: url("htAdobeStock_15920957.jpegter/cover no-repeat;
-      color: #fff;
-      text-align: center;
-      padding: 8rem 0;
-      position: relative;
-    }
+    .hero{background:url('/images/hero-bg.jpg') center/cover no-repeat;color:#fff;text-align:center;padding:6rem 1rem;}
+    .hero h1{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem;}
+    .hero p{font-size:1.25rem;margin-bottom:2rem;}
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-    }
+    /* Buttons */
+    .btn{display:inline-block;padding:.75rem 1.5rem;border-radius:var(--radius);font-weight:600;text-decoration:none;transition:.3s;}
+    .btn-primary{background:var(--primary);color:#fff;}
+    .btn-primary:hover{background:#0f78e5;}
+    .btn-secondary{background:var(--accent);color:var(--dark);}  
+    .btn-secondary:hover{background:#e8a700;}
+    .btn-tertiary{background:transparent;border:2px solid var(--primary);color:var(--primary);}  
+    .btn-tertiary:hover{background:var(--primary);color:#fff;}
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
+    /* Why choose us */
+    .why .grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+    .card{background:#fff;padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow);}
 
-    .hero h1 {
-      font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
+    /* Services */
+    .tabs{display:flex;gap:1rem;margin-bottom:2rem;}
+    .tab{border:1px solid var(--primary);color:var(--primary);padding:.5rem 1rem;border-radius:var(--radius);cursor:pointer;background:#fff;}
+    .tab.active,.tab:hover{background:var(--primary);color:#fff;}
+    .tab-content{display:none;}
+    .tab-content.active{display:block;}
 
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--dark);
-      padding: 0.9rem 2rem;
-      border-radius: var(--radius);
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .btn-primary:hover {
-      background: #ffd166;
-    }
-
-    /* Benefits */
-    #benefits {
-      background: #fff;
-    }
-
-    #benefits h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .benefit-list {
-      list-style: none;
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .benefit-list li {
-      background: var(--light);
-      padding: 1.5rem;
-      border-left: 4px solid var(--primary);
-      border-radius: var(--radius);
-      font-weight: 500;
-    }
-
-    /* Service Areas */
-    #service-areas {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    #service-areas h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .areas {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .area-card {
-      background: #fff;
-      color: var(--dark);
-      padding: 1.25rem;
-      border-radius: var(--radius);
-      text-align: center;
-      font-weight: 600;
-      transition: transform 0.2s ease;
-    }
-
-    .area-card:hover {
-
-      
-}
-
-      Announcement Bar */
-.announcement {
-  background: var(--primary);
-  color: #fff;
-  text-align: center;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-}
-
-/* Navigation */
-.main-nav {
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.75rem 0;
-}
-
-.logo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary);
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  color: var(--dark);
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: var(--primary);
-}
-
-/* Booking Section */
-.booking-section {
-  background: #f7fafc;
-  padding: 4rem 0;
-}
-
-.booking-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* Shop Section */
-.shop-section {
-  padding: 4rem 0;
-}
-
-.shop-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-      
-  
+    /* Blog */
+    .posts{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
 
     /* Footer */
-    footer {
-      background: var(--dark);
-      color: #fff;
-  <    }
+    footer{background:var(--dark);color:#fff;text-align:center;padding:2rem 1rem;}
+    .location-list{list-style:none;display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:center;padding:0;}
   </style>
 </head>
+<body>
 
-<body>>
-  <!-- Announcement Bar -->
-  <div class="announcement">CLAIM YOUR FREE CLEANUP TODAY!</div>
-
-  <!-- Navigation -->
-  <nav class="main-nav">
-    <div class="nav-container">
-      <a href="/" class="logo">Platinum Scoops</a>
-      <ul class="nav-links">
-        <li><a href="#booking">Schedule a Scoop</a></li>
-        <li><a href="#benefits">Your Routine</a></li>
-        <li><a href="#shop">The Essentials</a></li>
-        <li><a href="#service-areas">Where We Work</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  
-  <!-- Hero Section -->
+  <!-- ===== Hero ===== -->
   <header class="hero">
-    <div class="container hero-content">
-      <h1>Central Texas' #1 Pet Waste Removal Service</h1>
-      <p>Enjoy a spotless yard without lifting a finger. Weekly & one‑time scooping available.</p>
-      <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+    <div class="container">
+      <h1>Central Texas’ Platinum Standard in Poop Scooping</h1>
+      <p>Fast, reliable, and eco‑friendly pet waste removal for homes &amp; businesses.</p>
+      <a href="#book" class="btn btn-primary">Book a Clean‑Up</a>
     </div>
   </header>
 
-  <!-- Why Choose Us -->
-  <section id="benefits">
+  <!-- ===== Why Choose Us ===== -->
+  <section id="why" class="why">
     <div class="container">
       <h2>Why Choose Platinum Scoops?</h2>
-      <ul class="benefit-list">
-        <li><strong>Trusted &amp; Insured:</strong> Your pets and property are always protected.</li>
-        <li><strong>100% Satisfaction Guarantee:</strong> We scoop until you're happy.</li>
-        <li><strong>Eco‑Friendly Disposal:</strong> We keep waste out of landfills whenever possible.</li>
-        <li><strong>Flexible Scheduling:</strong> Weekly, bi‑weekly, or one‑time cleanups.</li>
-      </ul>
+      <div class="grid">
+        <div class="card"><h3>Local &amp; Trusted</h3><p>Serving Waco, Woodway, Hewitt, Robinson &amp; nearby communities.</p></div>
+        <div class="card"><h3>Eco‑Friendly Disposal</h3><p>We compost and dispose responsibly to keep Central Texas green.</p></div>
+        <div class="card"><h3>100% Satisfaction</h3><p>If you’re not happy, we’ll make it right—guaranteed.</p></div>
+        <div class="card"><h3>Jobber Client Hub</h3><p>Easy online booking, scheduling, and payments powered by Jobber.</p></div>
+      </div>
     </div>
-
-    
-<!-- Booking Section -->
-<section id="booking" class="booking-section">
-  <div class="container">
-    <h2>Schedule a Scoop</h2>
-    <!-- Jobber Booking Widget -->
-    <div id="08639c40-c72a-485f-8e76-f80064f23f20"></div>
-    <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
-    <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"
-            clienthub_id="08639c40-c72a-485f-8e76-f80064f23f20"
-            form_url="https://clienthub.getjobber.com/client_hubs/08639c40-c72a-485f-8e76-f80064f23f20/public/work_request/embedded_work_request_form">
-    </script>
-  </div>
-</section>
-
   </section>
 
-  <!-- Service Areas -->
-  <section id="service-areas">
+  <!-- ===== Services ===== -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="tabs">
+        <button class="tab active" data-target="residential">Residential</button>
+        <button class="tab" data-target="commercial">Commercial</button>
+      </div>
+      <div class="tab-content active" id="residential">
+        <h3>Residential Poop Scooping</h3>
+        <ul>
+          <li>One‑time, weekly, or bi‑weekly clean‑ups</li>
+          <li>Deodorizing treatments</li>
+          <li>Yard sanitization</li>
+        </ul>
+      </div>
+      <div class="tab-content" id="commercial">
+        <h3>Commercial &amp; HOA Services</h3>
+        <ul>
+          <li>Apartment complexes &amp; HOAs</li>
+          <li>Parks &amp; recreation areas</li>
+          <li>Pet‑friendly businesses</li>
+        </ul>
+      </div>
+      <a href="#book" class="btn btn-secondary">Get a Quote</a>
+    </div>
+  </section>
+
+  <!-- ===== Blog ===== -->
+  <section id="blog" class="blog">
+    <div class="container">
+      <h2>Scoop &amp; Tell</h2>
+      <div class="posts" id="blog-posts"><!-- Shopify blog posts will load here --></div>
+      <a href="/blog" class="btn btn-tertiary">Read More Articles</a>
+    </div>
+  </section>
+
+  <!-- ===== Locations ===== -->
+  <section id="locations" class="locations">
     <div class="container">
       <h2>Service Areas</h2>
-      <p style="text-align:center; margin-bottom:2rem;">We proudly serve Waco and the surrounding communities:</p>
-      <div class="areas">
-        <a href="/woodway" class="area-card">Woodway, TX</a>
-        <a href="/hewitt" class="area-card">Hewitt, TX</a>
-        <a href="/robinson" class="area-card">Robinson, TX</a>
-        <a href="/china-spring" class="area-card">China Spring, TX</a>
-      </div>
-      <p style="text-align:center; margin-top:2rem;">Looking for service somewhere else? <a href="/contact" style="color:#ffd166;">Contact us</a> and we'll see if we can help!</p>
-  
-<!-- Shop Section -->
-<section id="shop" class="shop-section">
-  <div class="container">
-    <h2>The Essentials</h2>
-    <div id='product-component-1748535197690'></div>
-  </div>
-</section>
-
-<!-- Shopify Buy Button Script -->
-<script type="text/javascript">
-/*<![CDATA[*/
-(function () {
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) {
-      ShopifyBuyInit();
-    } else {
-      loadScript();
-    }
-  } else {
-    loadScript();
-  }
-  function loadScript() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = scriptURL;
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-    script.onload = ShopifyBuyInit;
-  }
-  function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({
-      domain: 'upfsy5-3a.myshopify.com',
-      storefrontAccessToken: 'af85f63c3bdebe73abb2411fa75075c8',
-    });
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
-      ui.createComponent('product', {
-        id: '9871144943892',
-        node: document.getElementById('product-component-1748535197690'),
-        moneyFormat: '%24%7B%7Bamount%7D%7D',
-        options: {
-          "product": {
-            "styles": {
-              "product": {
-                "@media (min-width: 601px)": {
-                  "max-width": "calc(25% - 20px)",
-                  "margin-left": "20px",
-                  "margin-bottom": "50px"
-                }
-              }
-            },
-            "text": {
-              "button": "Add to cart"
-            }
-          },
-          "productSet": {
-            "styles": {
-              "products": {
-                "@media (min-width: 601px)": {
-                  "margin-left": "-20px"
-                }
-              }
-            }
-          },
-          "modalProduct": {
-            "contents": {
-              "img": false,
-              "imgWithCarousel": true,
-              "button": false,
-              "buttonWithQuantity": true
-            },
-            "styles": {
-              "product": {
-                "@media (min-width: 601px)": {
-                  "max-width": "100%",
-                  "margin-left": "0px",
-                  "margin-bottom": "0px"
-                }
-              }
-            },
-            "text": {
-              "button": "Add to cart"
-            }
-          },
-          "option": {},
-          "cart": {
-            "text": {
-              "total": "Subtotal",
-              "button": "Checkout"
-            }
-          },
-          "toggle": {}
-        },
-      });
-    });
-  }
-})();
-/*]]>*/
-</script>
-
+      <p>We proudly scoop in:</p>
+      <ul class="location-list">
+        <li>Waco, TX</li>
+        <li>Woodway, TX</li>
+        <li>Hewitt, TX</li>
+        <li>Robinson, TX</li>
+        <li>and surrounding communities</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ===== Footer ===== -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Platinum Scoops. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Platinum Scoops. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- ===== Jobber Booking Widget Placeholder ===== -->
+  <div id="book" data-jobber-widget data-token="YOUR_JOBBER_TOKEN"></div>
+
+  <!-- ===== Stripe Checkout ===== -->
+  <script>
+    document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const stripe = Stripe('pk_live_REPLACE_WITH_YOUR_KEY');
+        const { sessionId } = await fetch('/.netlify/functions/create-checkout-session', { method: 'POST' }).then(r => r.json());
+        stripe.redirectToCheckout({ sessionId });
+      });
+    });
+  </script>
+
+  <!-- ===== Shopify Blog Loader ===== -->
+  <script>
+    fetch('/collections/blog-posts?view=json')
+      .then(r => r.json())
+      .then(posts => {
+        const container = document.getElementById('blog-posts');
+        posts.slice(0,3).forEach(post => {
+          const article = document.createElement('article');
+          article.innerHTML = `<h3>${post.title}</h3><p>${post.excerpt}</p><a href="${post.url}">Read more</a>`;
+          container.appendChild(article);
+        });
+      });
+  </script>
+
+  <!-- ===== Tabs Script ===== -->
+  <script>
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
